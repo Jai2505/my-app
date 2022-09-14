@@ -1,0 +1,16 @@
+<h2>Event Registration</h2>
+
+<input type="text" [(ngModel)]="name" />
+<button class="btn btn-primary" (click)="register()">Register</button>
+
+<br />
+<ol>
+  <li *ngFor="let name of names; let i = index">
+    {{ name }}<button (click)="deletethis(i)">delete</button>
+    <button (click)="add(i)">Add</button>
+  </li>
+</ol>
+<br />
+<button class="btn btn-warning" (click)="delete()">Delete</button>
+<button class="btn btn-warning" (click)="deleteall()">Delete All</button>
+<button class="btn btn-warning" (click)="reverse()">Reverse</button>

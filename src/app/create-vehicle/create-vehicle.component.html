@@ -1,0 +1,23 @@
+<h1>Create Vehicle Form</h1>
+<form [formGroup]="vehicleForm">
+  <br />
+  <label>Vehicle</label>
+  <input type="text" formControlName="Vehicle" />
+  <br />
+  <label>Manufacturer</label>
+  <input type="text" formControlName="manufacturer" />
+  <br />
+  <label>Model</label>
+  <input type="text" formControlName="model" />
+  <br />
+  <label>Type</label>
+  <input type="text" formControlName="type" />
+  <br />
+  <label>Fuel</label>
+  <input type="text" formControlName="fuel" />
+  <br />
+  <label>Color</label>
+  <input type="text" formControlName="color" />
+  <br />
+  <button class="btn btn-success" (click)="submit()">Submit</button>
+</form>

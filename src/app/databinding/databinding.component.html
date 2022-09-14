@@ -1,0 +1,58 @@
+<p>databinding works!</p>
+<p>My age is {{ age }}</p>
+<p>My Name is {{ name }}</p>
+<p>From India: {{ isIndian }}</p>
+
+<p *ngFor="let phone of phones">{{ phone }}</p>
+
+<ul>
+  <li *ngFor="let course of courses">{{ course }}</li>
+</ul>
+
+<p>My name is {{ user.name }}. I am from {{ user.city }}.</p>
+
+<p>Student name: {{ student.name }}</p>
+<p>Student Id: {{ student.Id }}</p>
+<p>Student marks: {{ student.marks }}</p>
+
+<p>
+  My Name is {{ employee.name }}. I got an offer in {{ employee.company }} with
+  the package of {{ employee.package }} per annum and the location is
+  {{ employee.location }}.
+</p>
+
+<p *ngFor="let user of users">Name:{{ user.name }} city:{{ user.city }}</p>
+<p>Name: {{ users[0].name }}</p>
+
+<table border="2">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.name }}</td>
+      <td>{{ user.city }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+<table border="2">
+  <thead>
+    <tr>
+      <th>Student Name</th>
+      <th>Student ID</th>
+      <th>Marks Obtained</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student  of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.Id }}</td>
+      <td>{{ student.marks }}</td>
+    </tr>
+  </tbody>
+</table>

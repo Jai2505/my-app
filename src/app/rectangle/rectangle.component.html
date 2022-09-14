@@ -1,0 +1,13 @@
+<div class="container">
+<h2>Rectangle Measurments</h2>
+<label>Length</label>
+<input class="form-control" type="number" [(ngModel)]="length">
+<br>
+<label>Width</label>
+<input class="form-control" type="number" [(ngModel)]="width">
+<br>
+<button class="btn btn-primary" (click)="area()">Area</button>
+<button class="btn btn-warning" (click)="peri()">Perimeter</button>
+<br>
+<h3>Result is {{result}}</h3>
+</div>

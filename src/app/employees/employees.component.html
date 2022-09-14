@@ -1,0 +1,45 @@
+<div>
+
+<h3>Empoloyee Details</h3>
+
+<br />
+<label>Name: </label>
+<input type="text" [(ngModel)]="name" />
+<br />
+<label>Age: </label>
+<input type="number" [(ngModel)]="age" />
+<br />
+<label>Company: </label>
+<input type="text" [(ngModel)]="company" />
+<br />
+<label> Package: </label>
+<input type="number" [(ngModel)]="package" />
+<br />
+<button class="btn btn btn-primary" (click)="add()">Register</button>
+<br />
+<button class="btn btn btn-secondary" (click)="LowtoHigh()">Package Low to High</button>
+<button class="btn btn btn-warning"(click)="HightoLow()">Package Hight to Low</button>
+<br />
+<table border="2" class="table table-hover">
+  <thead>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Company</th>
+    <th>Package</th>
+    <th><button (click)="clear()">Delete All</button></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <td>{{ employee.name | uppercase}}</td>
+      <td>{{ employee.age | age}}</td>
+      <td>{{ employee.company | uppercase}}</td>
+      <td>{{ employee.package | package}}</td>
+      <td><button (click)="remove(i)">Remove</button></td>
+    </tr>
+    <tr>
+        <td colspan="3">Total Package</td>
+        <td>{{totalpackage}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>

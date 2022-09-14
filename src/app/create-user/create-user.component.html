@@ -1,0 +1,130 @@
+<form [formGroup]="userForm">
+  <label>Name</label>
+  <input type="text" formControlName="name" />
+  <div
+    class="error"
+    *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid"
+  >
+    <p *ngIf="userForm.get('name')?.errors?.['required']">Name is Required !</p>
+    <p *ngIf="userForm.get('name')?.errors?.['minlength']">
+      Minimum 3 Chars Required !
+    </p>
+    <p *ngIf="userForm.get('name')?.errors?.['maxlength']">
+      Maximum 10 Chars Allowed !
+    </p>
+  </div>
+  <br />
+  <label>Age</label>
+  <input type="number" formControlName="age" />
+  <div
+    class="error"
+    *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid"
+  >
+    <p *ngIf="userForm.get('age')?.errors?.['required']">Age is Required !</p>
+    <p *ngIf="userForm.get('age')?.errors?.['min']">
+      Minimum Age 18 is Required !
+    </p>
+    <p *ngIf="userForm.get('age')?.errors?.['max']">
+      Maximum Age 120 is Allowed !
+    </p>
+  </div>
+  <br />
+  <label>Phone</label>
+  <input type="number" formControlName="phone" />
+  <div
+    class="error"
+    *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid"
+  >
+    <p *ngIf="userForm.get('phone')?.errors?.['required']">
+      Phone Number is Required !
+    </p>
+    <p *ngIf="userForm.get('phone')?.errors?.['min']">
+      Minimum Phone Number 10 is Required !
+    </p>
+    <p *ngIf="userForm.get('phone')?.errors?.['max']">
+      Maximum Phone Number 10 is Allowed !
+    </p>
+  </div>
+  <br />
+  <div formGroupName="address">
+    <label>State</label>
+    <input type="text" formControlName="state" />
+    <br />
+    <label>pin</label>
+    <input type="number" formControlName="pin" />
+    <div
+      class="error"
+      *ngIf="
+        userForm.get('address')?.get('pin')?.touched &&
+        userForm.get('address')?.get('pin')?.invalid
+      "
+    >
+      <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">
+        Pin is Required !
+      </p>
+      <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">
+        Minimum Pin 6 Digits Required !
+      </p>
+      <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">
+        Maximum Pin 6 Digits Allowed !
+      </p>
+    </div>
+  </div>
+  <br />
+  <div formArrayName="cards">
+    <div *ngFor="let card of cardsFormArray.controls; let i = index">
+      <div formGroupName="{{ i }}">
+        <label>Number</label>
+        <input type="number" formControlName="number" />
+        <br />
+        <label>Expiry</label>
+        <input type="month" formControlName="expiry" />
+        <br />
+        <label>CVV</label>
+        <input type="number" formControlName="cvv" />
+        <div
+          class="error"
+          *ngIf="
+            cardsFormArray.controls[i]?.get('cvv')?.touched &&
+            cardsFormArray.controls[i]?.get('cvv')?.invalid
+          "
+        >
+          <p
+            *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['required']"
+          >
+            CVV is Required !
+          </p>
+          <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['min']">
+            CVV Min 3 is Required !
+          </p>
+          <p *ngIf="cardsFormArray.controls[i].get('cvv')?.errors?.['max']">
+            CVV Max 3 is Required !
+          </p>
+        </div>
+        <br />
+        <button class="btn btn-danger" (click)="remove(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <button class="btn btn-primary" (click)="add()">Add Card</button>
+  <br />
+  <label>Payment Type: </label>
+  <label>UPI Payment</label>
+  <input type="radio" value="upi" formControlName="paymentType" />
+  <label>Card Payment</label>
+  <input type="radio" value="card" formControlName="paymentType" />
+  <br />
+  <div *ngIf="userForm.get('paymentType')?.value == 'upi'">
+    <label>UPI Payment</label>
+    <input type="text" formControlName="upi" />
+  </div>
+  <br />
+  <div *ngIf="userForm.get('paymentType')?.value == 'card'">
+    <label>Card Payment</label>
+    <input type="number" formControlName="card" />
+  </div>
+  <br />
+
+  <button class="btn btn-warning" (click)="submit()">Submit</button>
+</form>

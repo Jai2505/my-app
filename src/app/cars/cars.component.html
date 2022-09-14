@@ -1,0 +1,33 @@
+<label> Select Car</label>
+
+<input type="radio" name="car" value="honda" [(ngModel)]="car" />
+<label><b> Honda </b></label>
+<input type="radio" name="cars" value="bmw" [(ngModel)]="car" />
+<label><b>BMW</b></label>
+<input type="radio" name="cars" value="audi" [(ngModel)]="car" />
+<label><b>Audi</b></label>
+<br />
+<img
+  *ngIf="car == 'honda'"
+  src="https://i.brecorder.com/primary/2022/05/626e8e55ac3c3.jpg"
+  alt="honda img"
+  width="85%"
+  height="70%"
+/>
+
+<img
+  *ngIf="car == 'bmw'"
+  src="https://i.pinimg.com/originals/42/2b/15/422b15d47b9a0d7eb271011b95498bf2.jpg"
+  alt="BMW img"
+  width="85%"
+  height="70%"
+/>
+<img
+  *ngIf="car == 'audi'"
+  src="https://imgd.aeplcdn.com/0x0/n/cw/ec/22801/q2-exterior-right-front-three-quarter-70077.jpeg"
+  alt="Audi img"
+  width="85%"
+  height="70%"
+/>
+
+<marquee> {{message}}</marquee>

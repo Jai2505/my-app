@@ -1,0 +1,12 @@
+<div
+  *ngFor="let mail of mails"
+  [ngClass]="{
+    visited: mail.completed == true,
+    unvisited: mail.completed == false
+  }"
+>
+  <input type="checkbox" />
+  <label>{{ mail.userId }}</label>
+  <label>{{ mail.id }}</label>
+  <label> {{ mail.title }} </label>
+</div>

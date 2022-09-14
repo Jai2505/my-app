@@ -1,0 +1,30 @@
+<div class="row">
+  <div
+    id="box"
+    class="col-lg-3 col-md-2 col-sm-1"
+    *ngFor="let detail of details"
+  >
+    <p><b> Name:</b> {{ detail.name }}</p>
+    <p><b> ID: </b> {{ detail.id }}</p>
+    <p><b> Username: </b> {{ detail.username }}</p>
+    <hr />
+    <p><b> Email: </b> {{ detail.email }}</p>
+    <p>
+      <b>Address:</b> {{ detail.address.street }}, {{ detail.address.suite }},
+      {{ detail.address.city }}, {{ detail.address.zipcode }}
+    </p>
+    <p>
+      <b> Location: Lat: </b>{{ detail.address.geo.lat }}, <b>Lng:</b>
+      {{ detail.address.geo.lng }}
+    </p>
+    <hr />
+    <p><b>Company:</b> {{ detail.company.name }}</p>
+    <p><b>catchPhrase: </b>{{ detail.company.catchPhrase }}</p>
+    <p><b>BS:</b> {{ detail.company.bs }}</p>
+    <hr />
+    <p><b>Phone:</b> {{ detail.phone }}</p>
+    <p>
+      <b>Website: </b> <a href="{{ detail.website }}">{{ detail.website }}</a>
+    </p>
+  </div>
+</div>
