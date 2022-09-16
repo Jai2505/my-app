@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Items } from '../items';
 import { ItemsService } from '../items.service';
 
@@ -9,6 +9,7 @@ import { ItemsService } from '../items.service';
 })
 export class ItemcartComponent implements OnInit {
   public items: Items[] = [];
+  @Input() rating: number = 0;
 
   constructor(private _itemsService: ItemsService) {
     this._itemsService.getitems().subscribe(

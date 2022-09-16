@@ -15,6 +15,12 @@ export class CardataService {
     );
   }
 
+  getVehicle(id:string): Observable<Cardata> {
+    return this._httpClient.get<Cardata>(
+      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction' + '/'+ id
+    );
+  }
+
   deleteVehicle(id: string): Observable<Cardata> {
     return this._httpClient.delete<Cardata>(
       'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction' +
@@ -41,8 +47,9 @@ export class CardataService {
 
   createVehicle(vehicle: Cardata): Observable<Cardata> {
     return this._httpClient.post<Cardata>(
-      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction', vehicle
-   );
+      'https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction',
+      vehicle
+    );
   }
 
   getSortedVehicles(column: string, order: string): Observable<Cardata[]> {

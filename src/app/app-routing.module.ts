@@ -7,6 +7,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CardataComponent } from './cardata/cardata.component';
 import { CarsComponent } from './cars/cars.component';
 import { CartComponentComponent } from './cart.component/cart.component.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
 import { ChartsComponent } from './charts/charts.component';
 import { ComponentComponent } from './component/component.component';
 import { CreateUserComponent } from './create-user/create-user.component';
@@ -22,12 +23,16 @@ import { ItemcartComponent } from './itemcart/itemcart.component';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { LoginComponent } from './login/login.component';
 import { MailinboxComponent } from './mailinbox/mailinbox.component';
+import { NavComponent } from './nav/nav.component';
 import { NotifyGuard } from './notify.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ProductComponent } from './product/product.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { SocialpostComponent } from './socialpost/socialpost.component';
 import { SquareComponent } from './square/square.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -58,6 +63,11 @@ const routes: Routes = [
       { path: 'idcard', component: IdcardComponent },
       {path: 'create-vehicle', component:CreateVehicleComponent, canDeactivate:[NotifyGuard]},
       {path: 'create-user', component:CreateUserComponent},
+      {path:'parent', component:ParentComponent},
+      {path:'product', component:ProductComponent},
+      {path: 'cartlist', component:CartlistComponent},
+      {path: 'nav', component:NavComponent},
+      {path:'vehicle-details/:id', component:VehicleDetailsComponent}
     ],
   },
   { path: '', component: LoginComponent },

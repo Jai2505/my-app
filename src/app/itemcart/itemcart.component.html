@@ -5,6 +5,8 @@
   <p>{{ item.description }}</p>
   <p>{{ item.category }}</p>
   <p><img src="{{item.image}}" width="50px"></p>
-  <p>{{ item.rating.rate }}</p>
+  <p><app-star [rating]="item.rating.rate"></app-star>
+</p>
   <p>{{ item.rating.count }}</p>
+
 </div>

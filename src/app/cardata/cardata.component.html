@@ -23,6 +23,7 @@
     <th>Color</th>
     <th>Id</th>
     <th>Actions</th>
+    <th>View Details</th>
   </thead>
   <tbody>
     <tr *ngFor="let vehicle of vehicles">
@@ -37,6 +38,9 @@
         <button class="btn btn-danger" (click)="delete(vehicle.id)">
           Delete
         </button>
+        </td>
+        <td>
+        <button class="btn btn-success" (click)="view(vehicle.id)"> View </button>
       </td>
     </tr>
   </tbody>

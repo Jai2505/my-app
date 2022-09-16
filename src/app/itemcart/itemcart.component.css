@@ -4,5 +4,8 @@ div{
     width: 300px;
     height: 450px;
     margin: 30px;
+    padding: 0px;
+    overflow: auto;
+    text-align: inherit;
 }
 
